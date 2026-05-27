@@ -1,0 +1,17 @@
+BasedOnStyle: Microsoft
+BreakTemplateDeclarations: Yes
+BreakBeforeBraces: Allman
+PointerAlignment: Middle
+ReferenceAlignment: Middle
+QualifierAlignment: Right
+AlignConsecutiveAssignments: true
+AlignAfterOpenBracket: BlockIndent
+BinPackArguments: false
+BinPackParameters: false
+PackConstructorInitializers: NextLineOnly
+AllowShortBlocksOnASingleLine: Empty
+AllowShortLambdasOnASingleLine: Empty
+ColumnLimit: 100
+PenaltyBreakAssignment: 10000
+PenaltyBreakOpenParenthesis: 0
+PenaltyExcessCharacter: 1
