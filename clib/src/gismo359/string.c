@@ -323,5 +323,5 @@ void String_Destroy(String * string)
     assert(string);
     assert(string->stride == 1);
 
-    Array_DestroyEx(string, null, null);
+    Array_DestroyEx(string, (DestroyFunction)Array_DefaultDestroy, string);
 }

@@ -122,8 +122,9 @@ i64 File_GetSize(File * file)
     assert(file);
 
     i64 position = File_GetPosition(file);
-    i64 size     = File_GetSize(file);
 
+    File_MoveToEnd(file);
+    i64 size = File_GetPosition(file);
     File_MoveTo(file, position);
 
     return size;
