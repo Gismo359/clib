@@ -49,6 +49,29 @@ bool String_IsEmpty(String * string)
     return Array_IsEmpty(string);
 }
 
+c8 * String_Get(String * array, i32 idx)
+{
+    assert(array);
+    assert(idx >= 0);
+    assert(idx < array->count);
+
+    return Array_GetAs(c8, array, idx);
+}
+
+c8 * String_GetFirst(String * array)
+{
+    assert(array);
+
+    return Array_GetFirstAs(c8, array);
+}
+
+c8 * String_GetLast(String * array)
+{
+    assert(array);
+
+    return Array_GetLastAs(c8, array);
+}
+
 String String_ViewLiteral(c8 * buffer)
 {
     return Array_ViewData(buffer, 1, buffer == null ? 0 : strlen((char *)buffer));
@@ -81,6 +104,14 @@ void String_Resize(String * string, i32 count)
     assert(string->stride == 1);
 
     Array_Resize(string, count);
+}
+
+void String_Grow(String * string, i32 count)
+{
+    assert(string);                     
+    assert(string->stride == 1);
+
+    Array_Resize(string, string->count + count);
 }
 
 i32 String_AppendFormatExV(String * string, i32 size_hint, c8 * format, va_list args)

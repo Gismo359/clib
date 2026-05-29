@@ -19,12 +19,17 @@ bool String_IsAlien(String * string);
 
 bool String_IsEmpty(String * string);
 
+c8 * String_Get(String * array, i32 idx);
+c8 * String_GetFirst(String * array);
+c8 * String_GetLast(String * array);
+
 String String_ViewLiteral(c8 * buffer);
 String String_ViewData(c8 * data, i32 count);
 String String_View(String * string);
 
 void String_Reserve(String * string, i32 room);
 void String_Resize(String * string, i32 count);
+void String_Grow(String * string, i32 count);
 
 i32 String_AppendFormatExV(String * string, i32 size_hint, c8 * format, va_list args);
 i32 String_AppendFormatV(String * string, c8 * format, va_list args);
